@@ -27,6 +27,11 @@
             max-width: 1000px;
             margin-top: 20px;
         }
+        #ytPlayer {
+            display: none; /* YouTube плеер скрыт изначально */
+            width: 0; /* минимальный размер, чтобы почти не было видно */
+            height: 0;
+        }
     </style>
 </head>
 <body>
@@ -34,17 +39,20 @@
     
     <img id="image" src="https://preview.redd.it/big-monke-flips-you-off-what-u-do-v0-861gk9gqka0c1.png?auto=webp&s=4ffd6a12783c45e1a56bb7c19a57ead83aaa4f33" alt="Big Monke">
     
-    <audio id="sound">
-        <source src="gor.mp3" type="audio/mpeg">
-    </audio>
+    <!-- YouTube видео для звука -->
+    <div id="ytPlayer">
+        <iframe id="youtube" src="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1" 
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
+    </div>
 
     <script>
         const btn = document.getElementById('goBtn');
         const img = document.getElementById('image');
-        const audio = document.getElementById('sound');
+        const yt = document.getElementById('ytPlayer');
 
         btn.addEventListener('click', () => {
-            audio.play();       // воспроизводим звук
+            yt.style.display = 'block'; // запускаем YouTube
             img.style.display = 'block'; // показываем картинку
             btn.style.display = 'none';  // скрываем кнопку
         });
