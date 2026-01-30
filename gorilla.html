@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Стартовая страница</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eee; /* светло-серый фон */
+            flex-direction: column;
+        }
+        #goBtn {
+            padding: 20px 50px;
+            font-size: 24px;
+            color: white;
+            background-color: green;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #image {
+            display: none; /* изначально скрыта */
+            max-width: 1000px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="goBtn">GO</button>
+    
+    <img id="image" src="https://preview.redd.it/big-monke-flips-you-off-what-u-do-v0-861gk9gqka0c1.png?auto=webp&s=4ffd6a12783c45e1a56bb7c19a57ead83aaa4f33" alt="Big Monke">
+    
+    <audio id="sound">
+        <source src="gor.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const btn = document.getElementById('goBtn');
+        const img = document.getElementById('image');
+        const audio = document.getElementById('sound');
+
+        btn.addEventListener('click', () => {
+            audio.play();       // воспроизводим звук
+            img.style.display = 'block'; // показываем картинку
+            btn.style.display = 'none';  // скрываем кнопку
+        });
+    </script>
+</body>
+</html>
